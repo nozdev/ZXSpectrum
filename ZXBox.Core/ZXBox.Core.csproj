@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <Optimize>false</Optimize>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Hardware\Input\Joystick\Kempston.cs" />
+    <Compile Remove="Hardware\Input\Keyboard.cs" />
+    <Compile Remove="Cpus\Z80\Z80DDPrefixInstructions.cs" />
+    <Compile Remove="Cpus\Z80\Z80FDPrefixInstructions.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Hardware\Input\Joystick\" />
+    <Folder Include="Properties\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Memory" Version="4.5.5" />
+  </ItemGroup>
+
+</Project>
